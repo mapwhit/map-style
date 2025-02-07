@@ -1,0 +1,29 @@
+{
+  "name": "@mapwhit/map-style",
+  "version": "0.0.0",
+  "description": "Module to process and cache map style",
+  "author": {
+    "name": "Natalia Kowalczyk",
+    "email": "melitele@furkot.com",
+    "url": "https://melitele.me"
+  },
+  "repository": "mapwhit/map-style",
+  "license": "MIT",
+  "keywords": [
+    "map-style"
+  ],
+  "dependencies": {
+    "tile-cache": "^2.0.0"
+  },
+  "devDependencies": {
+    "@pirxpilot/jshint": "~3",
+    "undici": "^7.3.0"
+  },
+  "scripts": {
+    "test": "make check"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "version": 8,
+  "name": "Test",
+  "metadata": {
+    "caching": {
+      "default": "network-only",
+      "do-nothing": "offline"
+    }
+  },
+  "sources": {
+    "geojson_src": {
+      "data": {
+        "features": [],
+        "type": "FeatureCollection"
+      },
+      "type": "geojson"
+    },
+    "raster_src": {
+      "metadata": {
+        "caching": {
+          "default": "do-nothing",
+          "network-only": [
+            "all",
+            "terrain",
+            "network"
+          ]
+        }
+      },
+      "type": "raster"
+    },
+    "vector_src": {
+      "metadata": {
+        "caching": {
+          "cache-only": "offline",
+          "default": "cache-first-then-cache",
+          "network-only": [
+            "all",
+            "network",
+            "noCache"
+          ]
+        }
+      },
+      "type": "vector"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "paint": {
+        "background-color": {
+          "stops": [
+            [
+              6,
+              "rgba(252, 247, 229, 1)"
+            ],
+            [
+              10,
+              "rgba(252, 247, 229, 1)"
+            ],
+            [
+              14,
+              "rgba(246, 241, 229, 1)"
+            ],
+            [
+              15,
+              "rgba(246, 241, 229, 1)"
+            ]
+          ]
+        }
+      },
+      "type": "background"
+    },
+    {
+      "id": "park",
+      "paint": {
+        "fill-color": "hsla(90, 41%, 85%, 1)",
+        "fill-opacity": 0.7,
+        "fill-outline-color": "hsla(123, 55%, 59%, 1)"
+      },
+      "source": "vector_src",
+      "source-layer": "park",
+      "type": "fill"
+    },
+    {
+      "id": "image",
+      "source": "raster_src",
+      "source-layer": "image",
+      "type": "raster"
+    }
+  ]
+}
