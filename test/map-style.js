@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const { MockAgent, setGlobalDispatcher } = require('undici');
-const mapStyle = require('../lib/map-style');
+const { mapStyle } = require('../lib/map-style');
 
 test('map-style', async () => {
   const agent = new MockAgent();
