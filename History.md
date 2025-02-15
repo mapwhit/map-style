@@ -1,4 +1,10 @@
 
+0.0.4 / 2025-02-14
+==================
+
+ * load and cache tiles
+ * make loading style more flexible to prepare for loading tiles
+
 0.0.3 / 2025-02-09
 ==================
 
