@@ -82,6 +82,15 @@
       "type": "fill"
     },
     {
+      "id": "name",
+      "layout": {
+        "text-field": "{name}"
+      },
+      "source": "vector_src",
+      "source-layer": "waterway",
+      "type": "symbol"
+    },
+    {
       "id": "image",
       "source": "raster_src",
       "source-layer": "image",
