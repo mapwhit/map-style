@@ -1,6 +1,6 @@
 {
   "name": "@mapwhit/map-style",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Module to process and cache map style",
   "author": {
     "name": "Natalia Kowalczyk",

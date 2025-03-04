@@ -1,4 +1,10 @@
 
+0.0.5 / 2025-03-04
+==================
+
+ * replace text-field={name} by language dependent expression
+ * set options as empty object by default
+
 0.0.4 / 2025-02-14
 ==================
 
