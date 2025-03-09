@@ -1,4 +1,9 @@
 
+0.0.7 / 2025-03-09
+==================
+
+ * adding default empty name for features with no name
+
 0.0.6 / 2025-03-06
 ==================
 
