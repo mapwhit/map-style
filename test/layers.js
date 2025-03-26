@@ -85,3 +85,29 @@ test('ABC', () => {
   assert.equal(nameLayer.layout['text-field'], 'ABC');
   assert.ok(!nameLayer.metadata['text-field']);
 });
+
+test('visibility', () => {
+  const layer = {
+    source: 'source'
+  };
+  const style = {
+    sources: {
+      source: {
+        metadata: {
+          visibility: 'abc'
+        }
+      }
+    },
+    layers: [ layer ]
+  };
+  init(style);
+  assert.ok(!layer.layout?.visibility);
+  reset(style, {});
+  assert.ok(!layer.layout?.visibility);
+  reset(style, { visibility: () => 'none'});
+  assert.equal(layer.layout.visibility, 'none');
+  reset(style, {});
+  assert.equal(layer.layout.visibility, 'none');
+  reset(style, { visibility: () => 'visible' });
+  assert.ok(!layer.layout?.visibility);
+});
