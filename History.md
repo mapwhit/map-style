@@ -1,4 +1,10 @@
 
+0.0.8 / 2025-06-12
+==================
+
+ * add 3 seconds timeout to load source descriptor
+ * ignore source if its descriptor cannot be loaded
+
 0.0.7 / 2025-03-09
 ==================
 
