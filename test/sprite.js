@@ -24,16 +24,23 @@ test('sprite', async () => {
   global.window = global.window ?? {};
   global.window.devicePixelRatio = 2;
 
-  const sprite = await loadSprite(loader('network-only'), selectSprite('https://example.com/sprite', [{
-    json: 'https://example.com/1-sprite.json',
-    src: 'https://example.com/A-sprite.webp'
-  }, {
-    json: 'https://example.com/2-sprite@2x.json',
-    src: 'https://example.com/B-sprite@2x.webp'
-  }, {
-    json: 'https://example.com/2-sprite@3x.json',
-    src: 'https://example.com/C-sprite@3x.webp'
-  }]));
+  const sprite = await loadSprite(
+    loader('network-only'),
+    selectSprite('https://example.com/sprite', [
+      {
+        json: 'https://example.com/1-sprite.json',
+        src: 'https://example.com/A-sprite.webp'
+      },
+      {
+        json: 'https://example.com/2-sprite@2x.json',
+        src: 'https://example.com/B-sprite@2x.webp'
+      },
+      {
+        json: 'https://example.com/2-sprite@3x.json',
+        src: 'https://example.com/C-sprite@3x.webp'
+      }
+    ])
+  );
   assert.ok(sprite);
   assert.ok(sprite.json);
   assert.ok(sprite.image);

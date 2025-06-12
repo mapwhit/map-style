@@ -19,11 +19,7 @@
       "metadata": {
         "caching": {
           "default": "do-nothing",
-          "network-only": [
-            "all",
-            "terrain",
-            "network"
-          ]
+          "network-only": ["all", "terrain", "network"]
         }
       },
       "type": "raster"
@@ -33,11 +29,7 @@
         "caching": {
           "cache-only": "offline",
           "default": "cache-first-then-cache",
-          "network-only": [
-            "all",
-            "network",
-            "noCache"
-          ]
+          "network-only": ["all", "network", "noCache"]
         }
       },
       "type": "vector"
@@ -49,22 +41,10 @@
       "paint": {
         "background-color": {
           "stops": [
-            [
-              6,
-              "rgba(252, 247, 229, 1)"
-            ],
-            [
-              10,
-              "rgba(252, 247, 229, 1)"
-            ],
-            [
-              14,
-              "rgba(246, 241, 229, 1)"
-            ],
-            [
-              15,
-              "rgba(246, 241, 229, 1)"
-            ]
+            [6, "rgba(252, 247, 229, 1)"],
+            [10, "rgba(252, 247, 229, 1)"],
+            [14, "rgba(246, 241, 229, 1)"],
+            [15, "rgba(246, 241, 229, 1)"]
           ]
         }
       },
