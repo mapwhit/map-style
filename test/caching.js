@@ -12,7 +12,7 @@ test('caching default', function () {
 });
 
 test('caching single option', function () {
-  let caching = initCaching({
+  const caching = initCaching({
     default: 'do-nothing',
     'network-only': 'field'
   });
@@ -27,7 +27,7 @@ test('caching single option', function () {
 });
 
 test('caching multiple options', function () {
-  let caching = initCaching({
+  const caching = initCaching({
     default: 'do-nothing',
     'network-only': 'field1',
     'cache-only': 'field2'
