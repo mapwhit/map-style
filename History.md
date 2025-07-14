@@ -1,4 +1,12 @@
 
+0.0.9 / 2025-07-13
+==================
+
+ * remove indirect sources that are not properly initialized
+ * add explicit await for `transform.pre` in `loader.load`
+ * add github check action
+ * use `biome` as a linter and formatter
+
 0.0.8 / 2025-06-12
 ==================
 
