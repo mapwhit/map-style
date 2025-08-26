@@ -1,4 +1,9 @@
 
+1.0.2 / 2025-08-26
+==================
+
+ * fix adding caching functions to style copy that is being cached
+
 1.0.1 / 2025-08-26
 ==================
 
