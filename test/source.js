@@ -1,6 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { geojson, image, raster, 'raster-dem': rasterDem, vector } = require('../lib/source');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { geojson, image, raster, 'raster-dem' as rasterDem, vector } from '../lib/source/index.js';
 
 test('source', () => {
   assert.equal(vector, raster);

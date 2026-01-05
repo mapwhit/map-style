@@ -1,8 +1,8 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { MockAgent, setGlobalDispatcher } = require('undici');
-const loader = require('../lib/loader');
-const { loadSprite, selectSprite } = require('../lib/sprite');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { MockAgent, setGlobalDispatcher } from 'undici';
+import loader from '../lib/loader.js';
+import { loadSprite, selectSprite } from '../lib/sprite.js';
 
 test('sprite', async () => {
   const agent = new MockAgent();

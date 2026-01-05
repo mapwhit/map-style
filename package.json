@@ -1,6 +1,8 @@
 {
   "name": "@mapwhit/map-style",
   "version": "1.0.2",
+  "type": "module",
+  "exports": "./lib/map-style.js",
   "description": "Module to process and cache map style",
   "author": {
     "name": "Natalia Kowalczyk",
@@ -20,14 +22,13 @@
     "tile-cache": "^2.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "2.3.11",
     "undici": "^7.3.0"
   },
   "scripts": {
     "test": "make check"
   },
   "files": [
-    "index.js",
     "lib"
   ]
 }
