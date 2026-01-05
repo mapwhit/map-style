@@ -1,6 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const loadGlyphs = require('../lib/glyphs');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import loadGlyphs from '../lib/glyphs.js';
 
 test('glyphs', async () => {
   loadGlyphs((params, type) => {

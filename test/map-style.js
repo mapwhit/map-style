@@ -1,8 +1,9 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { MockAgent, setGlobalDispatcher } = require('undici');
-const { initCacheStore } = require('../lib/loader');
-const { mapStyle } = require('../lib/map-style');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { MockAgent, setGlobalDispatcher } from 'undici';
+import { initCacheStore } from '../lib/loader.js';
+import { mapStyle } from '../lib/map-style.js';
+import styleJson from './fixtures/style.json' with { type: 'json' };
 
 test('map-style', async () => {
   const agent = new MockAgent();
@@ -13,7 +14,7 @@ test('map-style', async () => {
       path: 'style.json',
       method: 'GET'
     })
-    .reply(200, require('./fixtures/style.json'));
+    .reply(200, styleJson);
 
   const style = await mapStyle('https://example.com/style.json', 'network-only');
   assert.ok(style);
@@ -39,7 +40,7 @@ test('map-style with caching', (_, done) => {
       path: 'style.json',
       method: 'GET'
     })
-    .reply(200, require('./fixtures/style.json'));
+    .reply(200, styleJson);
 
   mapStyle('https://example.com/style.json', 'network-first-then-cache').then(style => {
     assert.ok(style);

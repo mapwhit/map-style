@@ -1,6 +1,6 @@
-const test = require('node:test');
-const assert = require('node:assert/strict');
-const { initCaching, getStrategy } = require('../lib/caching');
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { getStrategy, initCaching } from '../lib/caching/index.js';
 
 test('caching default', () => {
   const caching = initCaching('do-nothing');
