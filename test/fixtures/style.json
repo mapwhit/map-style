@@ -2,10 +2,7 @@
   "version": 8,
   "name": "Test",
   "metadata": {
-    "caching": {
-      "default": "network-only",
-      "do-nothing": "offline"
-    }
+    "caching": ["case", ["to-boolean", ["global-state", "offline"]], "do-nothing", "network-only"]
   },
   "sources": {
     "geojson_src": {
@@ -17,20 +14,25 @@
     },
     "raster_src": {
       "metadata": {
-        "caching": {
-          "default": "do-nothing",
-          "network-only": ["all", "terrain", "network"]
-        }
+        "caching": [
+          "case",
+          ["all", ["to-boolean", ["global-state", "terrain"]], ["to-boolean", ["global-state", "network"]]],
+          "network-only",
+          "do-nothing"
+        ]
       },
       "type": "raster"
     },
     "vector_src": {
       "metadata": {
-        "caching": {
-          "cache-only": "offline",
-          "default": "cache-first-then-cache",
-          "network-only": ["all", "network", "noCache"]
-        }
+        "caching": [
+          "case",
+          ["to-boolean", ["global-state", "offline"]],
+          "cache-only",
+          ["all", ["to-boolean", ["global-state", "network"]], ["to-boolean", ["global-state", "noCache"]]],
+          "network-only",
+          "cache-first-then-cache"
+        ]
       },
       "type": "vector",
       "tiles": []
