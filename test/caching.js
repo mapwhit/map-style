@@ -2,14 +2,14 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const { initCaching, getStrategy } = require('../lib/caching');
 
-test('caching default', function () {
+test('caching default', () => {
   const caching = initCaching('do-nothing');
 
   const strategy = getStrategy(caching, {});
   assert.equal(strategy, 'do-nothing');
 });
 
-test('caching single option', function () {
+test('caching single option', () => {
   const caching = initCaching(['case', ['to-boolean', ['global-state', 'field']], 'network-only', 'do-nothing']);
 
   let strategy = getStrategy(caching, {
@@ -21,7 +21,7 @@ test('caching single option', function () {
   assert.equal(strategy, 'do-nothing');
 });
 
-test('caching multiple options', function () {
+test('caching multiple options', () => {
   const caching = initCaching([
     'case',
     ['to-boolean', ['global-state', 'field1']],
@@ -45,7 +45,7 @@ test('caching multiple options', function () {
   assert.equal(strategy, 'do-nothing');
 });
 
-test('caching multiple fields', function () {
+test('caching multiple fields', () => {
   const caching = initCaching([
     'case',
     ['all', ['to-boolean', ['global-state', 'field1']], ['to-boolean', ['global-state', 'field2']]],
