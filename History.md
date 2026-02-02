@@ -1,4 +1,14 @@
 
+2.0.0 / 2026-02-01
+==================
+
+ * fix project name in Readme
+ * upgrade `tile-cache` to 3.0.0
+ * update github actions
+ * transition to ESM format
+ * upgrade `biome` to 2.3.11
+ * change caching expressions to the same language as map style layer properties
+
 1.0.2 / 2025-08-26
 ==================
 
