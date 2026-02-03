@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { getStrategy, initCaching } from '../lib/caching/index.js';
+import { getStrategy, initCaching, isCacheable } from '../lib/caching/index.js';
 
 test('caching default', () => {
   const caching = initCaching('do-nothing');
@@ -71,4 +71,30 @@ test('caching multiple fields', () => {
 
   strategy = getStrategy(caching, {});
   assert.equal(strategy, 'do-nothing');
+});
+
+test('isCacheable', () => {
+  assert.equal(isCacheable('do-nothing'), false);
+  assert.equal(
+    isCacheable([
+      'case',
+      ['all', ['to-boolean', ['global-state', 'field1']], ['to-boolean', ['global-state', 'field2']]],
+      'network-only',
+      'do-nothing'
+    ]),
+    false
+  );
+
+  assert.equal(isCacheable('cache-only'), true);
+  assert.equal(
+    isCacheable([
+      'case',
+      ['to-boolean', ['global-state', 'field1']],
+      'network-only',
+      ['to-boolean', ['global-state', 'field2']],
+      'cache-only',
+      'do-nothing'
+    ]),
+    true
+  );
 });
