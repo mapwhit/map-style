@@ -1,6 +1,6 @@
 {
   "name": "@mapwhit/map-style",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "type": "module",
   "exports": "./lib/map-style.js",
   "description": "Module to process and cache map style",
