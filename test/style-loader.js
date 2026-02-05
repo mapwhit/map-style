@@ -2,10 +2,10 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { MockAgent, setGlobalDispatcher } from 'undici';
 import { initCacheStore } from '../lib/loader.js';
-import { mapStyle } from '../lib/map-style.js';
+import { styleLoader } from '../lib/style-loader.js';
 import styleJson from './fixtures/style.json' with { type: 'json' };
 
-test('map-style', async () => {
+test('style-loader', async () => {
   const agent = new MockAgent();
   setGlobalDispatcher(agent);
   agent
@@ -16,12 +16,12 @@ test('map-style', async () => {
     })
     .reply(200, styleJson);
 
-  const style = await mapStyle('https://example.com/style.json', 'network-only');
+  const style = await styleLoader('https://example.com/style.json', 'network-only');
   assert.ok(style);
   assert.equal(Object.keys(style.sources).length, 3);
 });
 
-test('map-style with caching', (_, done) => {
+test('style-loader with caching', (_, done) => {
   initCacheStore({
     update: (_, style, type) => {
       setTimeout(() => {
@@ -42,7 +42,7 @@ test('map-style with caching', (_, done) => {
     })
     .reply(200, styleJson);
 
-  mapStyle('https://example.com/style.json', 'network-first-then-cache').then(style => {
+  styleLoader('https://example.com/style.json', 'network-first-then-cache').then(style => {
     assert.ok(style);
   });
 });
