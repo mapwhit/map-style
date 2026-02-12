@@ -21,7 +21,7 @@ test('sprite', async () => {
     })
     .reply(200, {});
 
-  global.window = global.window ?? {};
+  global.window ??= {};
   global.window.devicePixelRatio = 2;
 
   const sprite = await loadSprite(
@@ -63,7 +63,7 @@ test('sprite base url', async () => {
     })
     .reply(200, {});
 
-  global.window = global.window ?? {};
+  global.window ??= {};
   global.window.devicePixelRatio = 2;
 
   const sprite = await loadSprite(loader('network-only'), selectSprite('https://example.com/sprite'));
